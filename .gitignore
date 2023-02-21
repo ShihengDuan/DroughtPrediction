@@ -1,0 +1,13 @@
+*.ipynb
+*.ipynb*
+*.pyc
+*.csv
+*.err
+*.out
+*.sh
+*.pkl
+AutogluonModels*
+AutogluonModels*/*
+Duan-Models*
+Duan-Models*/*
+*__version__*

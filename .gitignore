@@ -6,8 +6,8 @@
 *.out
 *.sh
 *.pkl
-AutogluonModels*
-AutogluonModels*/*
-Duan-Models*
-Duan-Models*/*
+*AutogluonModels*
+*AutogluonModels*/*
+*Duan-Models*
+*Duan-Models*/*
 *__version__*

@@ -11,7 +11,7 @@ from autogluon.tabular import TabularDataset, TabularPredictor
 from multi_auto import MultilabelPredictor
 from sklearn.metrics import mean_squared_error, mean_absolute_error, f1_score
 
-PATH = 'DUAN-Models/classification/'
+PATH = 'DUAN-Models-2023/classification/'
 train = pd.read_csv('train_timeseries/train_timeseries.csv').set_index(['fips', 'date'])
 print(train.head())
 predictors = ['PRECTOT', 'PS', 'QV2M', 'T2M', 'T2MDEW', 'T2MWET', 'T2M_MAX', 'T2M_MIN', 'T2M_RANGE', 'TS',
@@ -42,8 +42,8 @@ name = []
 train_data = pd.DataFrame(data=all_data, columns=names)
 train_ds = TabularDataset(train_data)
 # AutoGluon
-predictor = MultilabelPredictor(labels=out_label, problem_types=['multiclass']*6, eval_metrics=['f1_macro']*6, path=PATH)
-predictor.fit(train_data.loc[:], time_limit=700, holdout_frac=0.4, 
+predictor = MultilabelPredictor(labels=out_label, problem_types=['multiclass']*6, eval_metrics=['f1_micro']*6, path=PATH)
+predictor.fit(train_data.loc[:], time_limit=1000, holdout_frac=0.4, 
                                                 excluded_model_types=['KNN',],
                                                 # presets='best_quality,'
                                                 # ag_args_fit={'num_gpus': 1},

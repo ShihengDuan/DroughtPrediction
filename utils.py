@@ -68,7 +68,7 @@ def loadXY(
     y_target = np.empty((len(df) // window_size, target_size))
     if random_state is not None:
         np.random.seed(random_state)
-    for fips in tqdm(score_df.index.get_level_values(0).unique()): # index of non-NAN rows for score. 
+    for fips in tqdm(score_df.index.get_level_values(0).unique()[:]): # index of non-NAN rows for score. 
         if random_state is not None:
             start_i = np.random.randint(1, window_size)
         else:

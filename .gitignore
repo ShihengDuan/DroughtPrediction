@@ -11,3 +11,6 @@
 *Duan-Models*
 *Duan-Models*/*
 *__version__*
+*.json
+*.params
+*.ubj
